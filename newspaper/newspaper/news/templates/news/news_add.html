@@ -5,12 +5,17 @@
 {% block content %}
     <h1>Noticias publicadas:</h1>
     <div class="row">
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-6">
             <form action="." method="POST">
                 {% csrf_token %}
-                {{ news_form }}
+                <table>
+                    {{ news_form }}
+                </table>
                 <button type="submit">{% trans "Submit" %}</button>
             </form>
+        </div>
+        <div class="col-lg-6">
+            texto de ayuda
         </div>
     </div>
 {% endblock %}
