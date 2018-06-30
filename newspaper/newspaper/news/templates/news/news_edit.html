@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load i18n bootstrap3 %}
+
+{% block content %}
+    <h1>Añadir nueva publicación:</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="." method="post" class="form">
+                {% csrf_token %}
+                <table>
+                    {% bootstrap_form news_form %}
+                </table>
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary">
+                        {% bootstrap_icon "start" %} {% trans "Submit" %}
+                    </button>
+                {% endbuttons %}
+            </form>
+        </div>
+        <div class="col-lg-6">
+            texto de ayuda
+        </div>
+    </div>
+{% endblock %}
