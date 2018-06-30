@@ -3,6 +3,7 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
+from newspaper.news.managers import NewsManager
 
 @python_2_unicode_compatible
 class BaseNews(models.Model):
@@ -22,6 +23,8 @@ class News(BaseNews):
     class Meta:
         verbose_name = _('news item')
         verbose_name_plural = _('news')
+
+    objects = NewsManager()
 
 
 class Event(BaseNews):
