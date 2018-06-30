@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'newspaper.news',
+    'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -104,4 +105,4 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'newspaper', 'static')]
 
-NUM_ITEMS_PAG = 2
+NUM_ITEMS_PAG = 10
