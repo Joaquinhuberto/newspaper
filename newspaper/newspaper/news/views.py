@@ -20,7 +20,7 @@ def news_list(request):
     try:
         news_published = paginator.page(page_published)
     except PageNotAnInteger:
-        news_published = paginator.page(1)
+        news_published = paginator.page(page_default)
     except EmptyPage:
         news_published = paginator.page(paginator.num_pages)
 
