@@ -20,7 +20,7 @@
         </div>
         <div class="col-lg-6">
             Si quiere borrar la noticia pulse en el boton de borrado
-            <a href="{% url "news_delete" news_form.instance.pk %}" class="btn btn-danger">{%  trans "Delete news" %}</a>
+            <button href="{% url "news_delete" news_form.instance.pk %}" class="btn btn-danger">{%  trans "Delete news" %}</button>
         </div>
     </div>
 {% endblock %}
