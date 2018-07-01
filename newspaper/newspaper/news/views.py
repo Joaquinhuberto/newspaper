@@ -23,6 +23,8 @@ def news_add(request):
     if request.method == 'POST':
         data = request.POST
     initial = {'publish_date': datetime.now()}
+    # if 'title' in request.GET:
+        # initial['title'] = request.GET['title']
     news_form = NewsForm(data=data,
                          initial=initial)
     if news_form.is_valid():
