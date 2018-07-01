@@ -23,7 +23,7 @@
     {% if user.is_authenticated %}
         <div class="row">
             <div class="col-lg-12">
-                <a href="{%  url "news_add" %}" class="btn btn-default" id="new_news">{%  trans "Add news" %}</a>
+                <a href="{% url "news_add" %}" class="btn btn-default" id="new_news">{%  trans "Add news" %}</a>
             </div>
         </div>
     {% endif %}
