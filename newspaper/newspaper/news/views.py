@@ -1,18 +1,30 @@
 from datetime import datetime
 
+
+from django.conf import settings
 from django.core.urlresolvers import reverse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from newspaper.settings import NUM_ITEMS_PAG
 from newspaper.news.forms import NewsForm
 from newspaper.news.models import News
 
 
 def news_list(request):
-    news_published = News.objects.news_published()[:NUM_ITEMS_PAG]
-    news_next_published = News.objects.news_next_published()[:NUM_ITEMS_PAG]
+    news_published = News.objects.news_published()
+    paginator = Paginator(news_published, settings.NUM_ITEMS_PAG)
+    page_default = 1
+    page_published = request.GET.get('page', page_default)
+    try:
+        news_published = paginator.page(page_published)
+    except PageNotAnInteger:
+        news_published = paginator.page(1)
+    except EmptyPage:
+        news_published = paginator.page(paginator.num_pages)
+
+    news_next_published = News.objects.news_next_published()
     return render_to_response("news/news_list.html",
                               {'news_published': news_published,
                                "news_next_published": news_next_published})

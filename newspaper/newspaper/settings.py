@@ -105,4 +105,4 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'newspaper', 'static')]
 
-NUM_ITEMS_PAG = 10
+NUM_ITEMS_PAG = 4

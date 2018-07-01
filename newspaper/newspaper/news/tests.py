@@ -32,6 +32,7 @@ class NewsTestCase(TestCase):
         self.assertEquals(response.status_code, 200)
 
 
+# funcional test selenium
 class SeleniumTestCase(LiveServerTestCase):
 
     def setUp(self):

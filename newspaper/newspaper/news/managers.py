@@ -11,7 +11,7 @@ class NewsQuerySet(QuerySet):
                    .order_by('publish_date')
 
     def news_next_published(self):
-        return self.filter(publish_date__gte=datetime.now()) \
+        return self.filter(publish_date__gte=datetime.now())\
             .order_by('publish_date')
 
 
