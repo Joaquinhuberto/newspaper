@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'newspaper.context_processors.blog',
             ],
         },
     },
@@ -106,3 +107,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'newspaper', 'static')]
 
 NUM_ITEMS_PAG = 4
+
+BLOG_URL = 'http://www.google.es'

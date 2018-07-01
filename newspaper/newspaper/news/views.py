@@ -27,7 +27,8 @@ def news_list(request):
     news_next_published = News.objects.news_next_published()
     return render_to_response("news/news_list.html",
                               {'news_published': news_published,
-                               "news_next_published": news_next_published})
+                               "news_next_published": news_next_published},
+                              context_instance=RequestContext(request))
 
 
 def news_add(request):
