@@ -53,6 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'newspaper.middleware.No404Middleware',
+    'newspaper.middleware.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'newspaper.urls'
@@ -65,6 +66,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -93,7 +95,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'es-ES'
 
-LANGUAGE = (
+LANGUAGES = (
     ('es', u'Español'),
     ('en', 'English'),
 )
