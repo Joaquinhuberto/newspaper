@@ -98,6 +98,8 @@ LANGUAGE = (
     ('en', 'English'),
 )
 
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'newspaper', 'locale')]
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
